@@ -1,0 +1,670 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>EternityStory｜ CS:GO-Inferno道具學習</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="9b064268-38d6-42b7-814b-c2520ef6fb9c" class="page sans"><header><img class="page-cover-image" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/beautyshot.jpg" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">📘</span></div><h1 class="page-title">EternityStory｜ CS:GO-Inferno<mark class="highlight-teal">道具學習</mark></h1></header><div class="page-body"><p id="d1b3cf78-4fda-41b5-9809-af0b4fb7a738" class="">Version : 民國111年/2022年9月19日🇹🇼 (v0.2)</p><hr id="0406c3e1-0c7f-48ff-9c5b-b887e93b083f"/><h2 id="3fff828e-f77b-421e-8457-1f8ac3a9bd70" class=""><mark class="highlight-teal">《CS:GO-EST隊伍Inferno》</mark></h2><p id="df41921e-ef83-4b80-a21d-eaf35ad6309f" class="">．Link</p><hr id="a2a53f53-2bb2-469e-bddb-f0b324ec7af6"/><h1 id="022500ca-d090-4c43-b79b-6296ba2dab0f" class=""><mark class="highlight-teal">《CS:GO-EST隊伍Inferno道具學習-煙》</mark></h1><h3 id="87dd31fd-9761-4a8a-8dcc-dfe26412b164" class="">．車位煙[1](位置/效果/跳丟)</h3><figure id="00152d0e-857b-4879-bf3b-7c84253ec28a" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220129230512_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220129230512_1.jpg"/></a></figure><figure id="e28e4b9c-d53f-4ff8-8165-ca22849508fc" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220129230517_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220129230517_1.jpg"/></a></figure><figure id="4e15ea4d-4fbb-4f3c-a33e-7fa5b87f67c4" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228191305_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228191305_1.jpg"/></a></figure><hr id="93d4c012-7cc0-444d-845e-278a49e6db8c"/><h3 id="bf3f3736-19e4-4339-8be0-923610f783a2" class="">．車位煙[2](位置/效果/跳丟)</h3><figure id="ae074df7-086f-4c60-a0a3-fc338756b774" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193005_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193005_1.jpg"/></a></figure><figure id="1903fd68-2ca6-49b6-919d-8e4be52ad161" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193012_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193012_1.jpg"/></a></figure><figure id="93c23a28-b383-4e03-a64b-6a7f065babbd" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213192955_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213192955_1.jpg"/></a></figure><hr id="1dfbfe46-fba5-479b-9148-373ec3f37724"/><h3 id="597f235a-4c6b-454c-a5ba-2a117c518a51" class="">．快速A小煙(位置/效果/走跳丟)</h3><p id="b4e1cf30-e642-4663-8b5f-aea40ac24755" class="">備註：第二張為一開始的瞄點，第三張為走一步後即丟的時候瞄點</p><figure id="a212eed8-1ad3-473a-adff-b14206078123" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220210165406_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220210165406_1.jpg"/></a></figure><figure id="1ca9644b-d806-4c15-b069-3594b5d3a482" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193655_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193655_1.jpg"/></a></figure><figure id="3545fbb6-166c-4365-ac43-c253c1f9306c" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193734_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193734_1.jpg"/></a></figure><figure id="f64c9e1e-fd87-4120-9b88-8c07b745f829" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193743_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193743_1.jpg"/></a></figure><hr id="db113f5e-4609-4160-b952-4e48524eac1f"/><h3 id="52c0db84-5a07-47f7-9ad1-d7bd58080a4f" class="">．CT煙(位置/效果/直接丟)</h3><figure id="d56b52df-bfe7-4103-b196-0e772001f061" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220210165653_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220210165653_1.jpg"/></a></figure><figure id="7ceafc7e-85fe-41d7-8dd6-43960d77c909" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220210165656_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220210165656_1.jpg"/></a></figure><figure id="f3f0ec96-edd2-4779-ae33-793f0c4bc22b" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220210165703_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220210165703_1.jpg"/></a></figure><hr id="81c78385-97ab-4117-b60f-8c9c27c74410"/><h3 id="c360696a-a075-46fe-8a9f-6467c8cc5184" class="">．棺材煙(位置/效果/直接丟)</h3><figure id="9268d8de-67bd-4f4b-815b-7eee3b57747d" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193046_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193046_1.jpg"/></a></figure><figure id="d1cc2300-e6ac-4ff6-8d84-2f904154817d" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193052_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193052_1.jpg"/></a></figure><figure id="ce5dea0a-a59d-45a1-aa6d-617a88201d24" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193100_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193100_1.jpg"/></a></figure><hr id="ef851fdb-51ed-4ee4-a6d9-90d5a2c7d940"/><h3 id="f07c090e-874c-4012-8a28-a7c553951d07" class="">．深的CT煙(位置/效果/跳丟)</h3><figure id="205e9830-2250-4957-a179-215d21246330" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193046_1%201.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193046_1%201.jpg"/></a></figure><figure id="f7c18a19-8c40-452a-a851-7152b158411a" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193125_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193125_1.jpg"/></a></figure><figure id="493ece9d-1a1d-47c9-95a1-bde1e045487e" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193134_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193134_1.jpg"/></a></figure><hr id="78a2388f-a3bf-4cb7-8322-7264faaafb15"/><h3 id="fa08c537-6f3d-4ac9-9ca9-06efb185f288" class="">．一箱煙(位置/效果/先蹲瞄後直接丟)</h3><p id="f366831e-b410-4249-b9ca-8b90dbb5a41a" class="">備註：第二張為蹲的時候瞄點，第三張為站起來的瞄點，然後直接丟</p><figure id="14e39a7d-6acd-4621-9640-7df4f7d927ca" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228191128_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228191128_1.jpg"/></a></figure><figure id="d5cc0688-cfae-4dd6-911c-4e0f7ec49c85" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193223_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193223_1.jpg"/></a></figure><figure id="b7466157-279a-42d0-9136-ad907180661c" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193232_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193232_1.jpg"/></a></figure><figure id="97878a68-5d61-4279-8e50-7857d27c6f6a" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193251_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193251_1.jpg"/></a></figure><hr id="e5004c58-090f-4a14-b2de-f10624aab95a"/><h3 id="6f8adff9-f545-409e-a35b-30e0aee894de" class="">．Coldzera煙(位置/效果/跑跳丟)By.FaZe Clan-[🇧🇷]coldzera</h3><p id="576e886d-50f5-4622-9197-86eb3334c783" class="">備註：第二張為一開始的瞄點，第三張為跑到這個位置時候跳丟瞄點</p><figure id="6c601104-7b0d-46c6-96d2-98b51d5a0eae" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213195126_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213195126_1.jpg"/></a></figure><figure id="a4df9c8d-d31d-45ab-9842-104a71e1ed95" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213195131_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213195131_1.jpg"/></a></figure><figure id="04d8659a-eb15-474f-93d0-fe02a41e7f4d" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213195138_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213195138_1.jpg"/></a></figure><figure id="58362d4b-bd50-4761-8435-adc1914a8f7e" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213195159_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213195159_1.jpg"/></a></figure><hr id="3dd22773-cadc-451d-8f9a-bafc7b282870"/><h3 id="63567cdd-a0db-40a5-b14c-7eb3d22152a5" class="">．側道快速馬車煙(位置/效果/跳丟)</h3><p id="175e62e8-6347-485a-9d58-3b68875d1317" class="">備註：</p><figure id="2c9ecf51-bde7-4568-95e0-d0b26b469be0" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194101_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194101_1.jpg"/></a></figure><figure id="326d773c-12aa-49a2-b84e-265507d385bd" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194104_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194104_1.jpg"/></a></figure><figure id="a6882633-98a5-4ed5-b8a9-c2683b147038" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194116_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194116_1.jpg"/></a></figure><hr id="6cd4cbf7-856c-44cd-a19b-34f803f7f4e1"/><h3 id="bae0cd00-955c-4ab0-b0b5-81223e883dcf" class="">．側道快速ARCH煙(位置/效果/跳丟)</h3><figure id="ba1dc05a-b043-49e6-b61c-75b1e729901a" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220220184809_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220220184809_1.jpg"/></a></figure><figure id="93daca88-fcaa-49f7-80ff-e4d9189e973a" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220220184814_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220220184814_1.jpg"/></a></figure><figure id="70af4984-9b8a-47b7-b075-45d794e4c050" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220220184822_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220220184822_1.jpg"/></a></figure><hr id="4802165b-778d-4d4d-8c30-9fe078945ca2"/><h3 id="f732ff6d-0ec7-4377-9c19-52aaa53f7c14" class="">．側道ARCH煙[1](位置/效果/跳丟)</h3><figure id="be61d612-ed91-4e0e-bbd1-16c5cbc7ab2b" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193949_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193949_1.jpg"/></a></figure><figure id="4d8074b7-c760-4f66-bb27-9ea3605347b6" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193953_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193953_1.jpg"/></a></figure><figure id="e7def81d-eafc-4358-8d66-5b627ecd4500" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194000_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194000_1.jpg"/></a></figure><hr id="f4bee8de-3051-45ce-bf74-69d3bf24e41b"/><h3 id="9bd24fee-c66b-4e40-8662-d42b3602b060" class="">．Pit大坑前的煙(位置/效果/直接丟)</h3><figure id="c9e2eb56-c161-47f1-a06b-1522e6ebca7a" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194215_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194215_1.jpg"/></a></figure><figure id="b752a3b3-b10d-45c3-93d2-5282e585aae4" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194220_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194220_1.jpg"/></a></figure><figure id="ec2ce201-c717-4f28-8cee-78d53a371296" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194227_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194227_1.jpg"/></a></figure><hr id="e2f4cd4a-c4e0-460e-813f-1c631676423b"/><h3 id="c282ef24-15af-48bc-b599-19be517ea204" class="">．曬衣場A1煙(位置/效果/直接丟)</h3><figure id="fc890c35-c40d-4f30-86d4-362b2dd30b64" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193912_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193912_1.jpg"/></a></figure><figure id="819eb020-e638-43e6-b2fb-f41616225916" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193917_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193917_1.jpg"/></a></figure><figure id="a31dd04a-e482-421e-a04d-c6a231bbd00c" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193926_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193926_1.jpg"/></a></figure><hr id="64a8b975-0482-44cf-996d-9ce1322e352b"/><h3 id="516288d3-3de4-49b3-9154-9f7468d89bee" class="">．曬衣場ARCH煙[1](位置/效果/直接丟)</h3><figure id="edf0c185-c4bc-4bec-9996-181bc9af0656" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193803_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193803_1.jpg"/></a></figure><figure id="b85029bd-49e5-4b2e-8777-3d8db5aac647" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193808_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193808_1.jpg"/></a></figure><figure id="7ae12355-ce37-4158-9fff-d52e823ab872" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193814_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193814_1.jpg"/></a></figure><hr id="f3fc1e64-8da1-4c8f-93f9-2332bb1038e5"/><h3 id="2b939b54-8a3e-4a31-98a4-3ddab67a9fec" class="">．曬衣場ARCH煙[2](位置/效果/跳丟)</h3><figure id="2931c4e0-5d09-44de-a4cf-63ecea5d55bc" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228191203_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228191203_1.jpg"/></a></figure><figure id="dd864abd-b277-42c7-8602-dabac7a1f30f" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228191209_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228191209_1.jpg"/></a></figure><figure id="b51b5e34-f6b7-4445-b073-d1bc5a8dc068" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228191216_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228191216_1.jpg"/></a></figure><hr id="5ac418b8-871b-439f-b89c-b545f0928d84"/><h3 id="6560daa4-9b76-455b-85c9-3b59b4af80c0" class="">．曬衣場圖書館煙(位置/效果/跳丟)</h3><figure id="a48790de-14ec-4613-8c69-b99a0590febb" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213163834_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213163834_1.jpg"/></a></figure><figure id="8eff59ea-70e5-4960-87f8-ddd9c60eac7a" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213163845_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213163845_1.jpg"/></a></figure><figure id="b08c87f1-37a3-4082-96fe-875924f3706b" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228190230_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228190230_1.jpg"/></a></figure><hr id="1a473df0-96c3-42a6-a676-b28f6b534d00"/><h3 id="8e8fb5d1-e4b9-4f60-a886-ffa3138257dd" class="">．Moto煙(位置/效果/直接丟)</h3><figure id="b70156c8-435f-4f0e-9ab8-a91bcd962b4b" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194559_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194559_1.jpg"/></a></figure><figure id="bc10de78-6b7a-4639-aa56-898044405ba7" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194617_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194617_1.jpg"/></a></figure><figure id="fe40f660-2028-4cc4-acec-af7e68214510" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194622_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194622_1.jpg"/></a></figure><hr id="5820a2ee-dcea-4d20-88f2-f365564c3310"/><h3 id="36d52c28-3165-450b-8227-39e5f09d0c91" class="">．拱門煙(位置/效果/直接丟)</h3><figure id="40ba7858-e957-4310-add2-a40bee7a008b" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213200222_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213200222_1.jpg"/></a></figure><figure id="aaee3bed-214c-4ad8-92a3-8a2bcb7f31b1" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213200225_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213200225_1.jpg"/></a></figure><figure id="d8348dc8-84cf-4b4b-bae7-b9df40e3aad6" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213200233_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213200233_1.jpg"/></a></figure><hr id="2ff90973-72bd-4050-a59c-b85f46a5b502"/><h3 id="0f4e9b38-7859-42d9-9390-ef0b842fd253" class="">．中路淺A1煙(位置/效果/直接丟)</h3><figure id="20761b1a-0a54-4a14-b5df-1ebae45a0270" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194317_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194317_1.jpg"/></a></figure><figure id="514854c7-1dc2-4046-a823-fd58fc729cec" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194321_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194321_1.jpg"/></a></figure><figure id="2bca7fd8-2950-4b40-8d24-9cd7faf3b0ba" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194327_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194327_1.jpg"/></a></figure><hr id="b6a044d8-b54e-4948-a186-3c004092bf7a"/><h3 id="be058daa-de3d-47f4-a335-51b42461d7c7" class="">．下水道Moto煙(位置/效果/跳丟)</h3><figure id="39b80b27-215f-450a-a684-21af87a8fb76" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194718_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194718_1.jpg"/></a></figure><figure id="386ddafd-8b6e-4f42-80ba-b80f47df8507" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194724_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194724_1.jpg"/></a></figure><figure id="827a6a92-b9d9-4b4e-ba20-c044e1a19e10" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194732_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194732_1.jpg"/></a></figure><hr id="e5cf691c-c0d6-4ad4-92ff-a42f636fe6bd"/><h3 id="cd216212-e78f-4987-a65a-8ad47c0bf4b0" class="">．TeamLiquid切割煙1(位置/效果/跳丟)</h3><p id="67e4dbdb-c0df-42e1-b1b5-41ca59ef4b6f" class="">
+</p><figure id="70666d3b-e6dc-4b86-bfb1-130e3d6bac5a" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194352_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194352_1.jpg"/></a></figure><figure id="a2350a58-fed9-4d90-82bd-f4b6f6b83118" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194356_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194356_1.jpg"/></a></figure><figure id="15d040bf-6135-432f-a6bf-8dd86c51c449" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194403_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194403_1.jpg"/></a></figure><hr id="3b3827a3-e57e-4d4d-beff-b7914cdda5a7"/><h3 id="3a30f1a2-3c1f-4a67-9121-47c9b7f55d72" class="">．Boiler ARCH煙(位置/效果/蹲丟)</h3><p id="dc713efa-6a00-4d1b-a353-2bf726bdd453" class="">備註： 第一張為站著的瞄點，第二張為蹲著的瞄點，然後直接丟</p><figure id="da791dd9-77f5-48ba-820f-a46407e4e66d" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194851_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194851_1.jpg"/></a></figure><figure id="0dd78a1e-103f-4f4a-8a58-98e2cc0b0df3" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194857_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194857_1.jpg"/></a></figure><figure id="70bdb0d4-8863-44e2-bc0a-f26b2210b94a" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194906_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194906_1.jpg"/></a></figure><hr id="94726073-31c0-4fd1-992e-eaf279e96b23"/><h3 id="56c2fe4a-15ae-4782-95d9-cb152abb0f76" class="">．2樓馬車煙(位置/效果/直接丟)</h3><figure id="acfd34a9-9fe3-452d-a916-a2c0ddfca99a" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228191657_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228191657_1.jpg"/></a></figure><figure id="0f319b75-f327-4461-b5c3-c46622d1e240" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228191715_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228191715_1.jpg"/></a></figure><figure id="64f35916-3f45-49f2-b645-bfc4f3e05510" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228191723_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228191723_1.jpg"/></a></figure><hr id="f3314c3d-bbfe-4ff7-b424-67783ecf891d"/><h3 id="e6d617f3-7c04-4da4-83ad-a71a0de4c7be" class="">．A1補煙Moto煙(位置/效果/直接丟)</h3><figure id="1e09cce3-7b06-4368-806e-c308336f12ef" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194754_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194754_1.jpg"/></a></figure><figure id="c0e7d91d-66a0-408a-85ad-93b343730fbe" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194802_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194802_1.jpg"/></a></figure><figure id="1c04b04e-5990-4f62-91b0-9e7d185896f9" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194805_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213194805_1.jpg"/></a></figure><hr id="0450b1e4-10fb-4d91-bb61-71be36b35c44"/><h3 id="db5d990a-20a1-4f7a-bf41-1353986be3e8" class="">．A包點完美封Moto煙(位置/效果/蹲丟)</h3><p id="daabc168-f237-4c32-a181-4c84e8d3f679" class="">備註： 第二張為蹲著的瞄點，然後直接丟</p><figure id="d8bff02d-816b-4df4-a9d8-e6d3a9045331" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213195019_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213195019_1.jpg"/></a></figure><figure id="c78e2a28-f07f-43e1-9e08-d02291a26d00" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213195024_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213195024_1.jpg"/></a></figure><figure id="deb2af77-f19e-4e3c-b331-d5dbcd55e362" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213195031_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213195031_1.jpg"/></a></figure><hr id="e58e93f5-8876-4bf0-9f88-0a2fbdb8d579"/><h3 id="7f8410fa-2f23-4c8b-ae50-c63a96ede293" class="">．A點死點OneWay煙(位置/效果/直接丟)</h3><figure id="72384f37-31d5-4119-904b-0832b0580a03" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228190540_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228190540_1.jpg"/></a></figure><figure id="1c5651f8-c7b0-46f4-92cc-f3727e3fba36" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228190543_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228190543_1.jpg"/></a></figure><figure id="f8287b22-8997-44f3-a6ef-fffbb79d9702" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228190550_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228190550_1.jpg"/></a></figure><hr id="3a4de8bf-65ac-4642-9b70-45689cddc357"/><h3 id="72265c1d-6cea-41e2-9335-adb35ef7dfe7" class="">．大坑補煙Moto煙(位置/效果/跳丟)</h3><figure id="e59e0117-16aa-46aa-96e7-4ff0bea131fc" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213195038_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213195038_1.jpg"/></a></figure><figure id="e8643606-238b-4c08-8a52-b7c39440470c" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213195043_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213195043_1.jpg"/></a></figure><figure id="1e2a6662-0646-4e74-959f-1bb1b129368b" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213195050_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213195050_1.jpg"/></a></figure><hr id="0b39b678-089c-4b66-b1e5-f5b91905869b"/><h3 id="e3b9e2b2-b23a-4990-af99-4919557f3ee3" class="">．匪口煙(位置/效果/跳丟) By.FaZe Clan<strong>-[🇪🇪]ropz</strong></h3><p id="50c9f620-93f3-46a8-8621-83acfe123ef0" class="">備註：貼著牆壁走</p><figure id="752a968f-ba45-46a8-beb3-cf8f0acdf136" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228183435_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228183435_1.jpg"/></a></figure><figure id="7c1449e4-1284-4830-803f-44223078bd50" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228183439_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228183439_1.jpg"/></a></figure><figure id="c35a53e5-9327-4740-8ec7-e51057a09d38" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228183444_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228183444_1.jpg"/></a></figure><figure id="140e4165-b347-44cb-a7b8-3a1ea8d1b009" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228183456_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228183456_1.jpg"/></a></figure><hr id="968769dd-01e0-461c-99b6-7796eaa3d5c3"/><h3 id="95f27d9c-5701-4c82-a0ac-2bb94f4812fb" class="">．警家快速中煙(位置/效果/跳丟)</h3><figure id="ac38e1c6-72f5-4a94-940b-19beb0604d97" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220127155504_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220127155504_1.jpg"/></a></figure><figure id="dcca3833-06bb-4cf7-bae1-e732d56fd0ee" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220127155537_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220127155537_1.jpg"/></a></figure><figure id="b585fae6-bbf3-4c23-ab97-ae203d01551a" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220127155546_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220127155546_1.jpg"/></a></figure><hr id="d5adc3c1-7f20-4d27-9673-4b9eb04c0275"/><h3 id="6cc4bdd3-184d-4a8e-8576-e6eee2a94559" class="">．棺材反清車位煙(位置/效果/跳丟)</h3><figure id="8748da33-58af-4835-a467-b343a4e3aabb" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213195807_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213195807_1.jpg"/></a></figure><figure id="29681067-c5b9-4901-a4e1-db045c935a8c" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213195812_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213195812_1.jpg"/></a></figure><figure id="e4c2ef9d-468a-4a15-a3c2-69234278d70b" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213195820_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213195820_1.jpg"/></a></figure><hr id="ce459f1d-5819-4129-93cb-ae6e5ab2c050"/><h3 id="65ea9f64-bf3b-4447-beef-db9927ef4b09" class="">．香蕉囗煙[1](位置/效果/直接丟)</h3><figure id="a34f288a-b611-4835-917d-ab9074797293" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213162404_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213162404_1.jpg"/></a></figure><figure id="1211b1da-f29f-4016-8d3d-b082fdbc00b8" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213162408_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213162408_1.jpg"/></a></figure><figure id="3cf6dc38-ed8a-42f5-8e87-fef58725ca7d" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228183336_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228183336_1.jpg"/></a></figure><hr id="f3a2f506-200e-4426-a1d4-f64e3b6fc16e"/><h3 id="52809305-757c-46e4-83cf-a69a220212d8" class="">．香蕉囗煙[2](位置/效果/跳丟)</h3><figure id="f0ec6b55-ff6b-449c-b26c-c13fbd55002c" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228183342_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228183342_1.jpg"/></a></figure><figure id="ffeb2702-0c65-44f1-95a9-6d4abb0eeb34" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228183404_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228183404_1.jpg"/></a></figure><figure id="304f5682-841d-4a92-8d9c-d1bd06efe298" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228183355_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228183355_1.jpg"/></a></figure><hr id="a3e3ece4-89ee-4842-a94d-c098cabed82e"/><h3 id="6aa654de-993a-454d-b356-f959c7102eb2" class="">．拱門回防A包點煙(位置/效果/跳丟) By.<strong>Natus Vincere Junior-[🇷🇺]Fen2k</strong></h3><figure id="d95ecd05-776d-4511-a07f-70177ff82ce3" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220127155556_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220127155556_1.jpg"/></a></figure><figure id="367035d9-cfe6-46b2-a743-9dc82ca29ae9" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220127155618_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220127155618_1.jpg"/></a></figure><figure id="001175f6-65ff-4973-be39-f48bcf0a0b9d" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220127155623_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220127155623_1.jpg"/></a></figure><hr id="0ec577ed-0aa3-4811-90ee-5be74fba5b75"/><h1 id="6ad826c4-a914-48f3-8994-89c2f8b2ae89" class=""><mark class="highlight-teal">《CS:GO-EST隊伍Dust2道具學習-火》</mark></h1><h3 id="4c36bf39-5f62-4dfe-b483-adc7d542e1ce" class="">．車位火(位置/效果/直接丟)</h3><figure id="8304387d-1381-4121-a7ce-0c19b79345fa" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220210165600_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220210165600_1.jpg"/></a></figure><figure id="97646434-246e-44a0-8857-72eb0061bc56" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220210165604_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220210165604_1.jpg"/></a></figure><figure id="207620d9-2f7a-4c78-be7e-107e9884853d" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220210165554_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220210165554_1.jpg"/></a></figure><hr id="43635c6b-8d32-4426-bded-76be49421ccf"/><h3 id="d63f7086-7419-4811-a142-4e30a7849dc2" class="">．三箱火(位置/效果/跳丟)</h3><figure id="96dd1b9e-002d-4912-814a-0eac271cf4c8" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228190922_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228190922_1.jpg"/></a></figure><figure id="a1753fe5-5a0e-4b25-8dfb-3df0e49c33b5" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228190926_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228190926_1.jpg"/></a></figure><figure id="42356eb5-2624-4312-a714-bdc551ef1831" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228190932_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228190932_1.jpg"/></a></figure><hr id="cf9cdb46-8997-4747-8389-04a8814445e7"/><h3 id="fa87d51d-7b8a-445d-9ca3-74821c513a1e" class="">．一二箱火(位置/效果/跳丟)By.<strong><strong>Team Vitality-[🇬🇧]ALEX</strong></strong></h3><figure id="34427fbf-ac75-409f-ba6a-210105f216ce" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228190943_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228190943_1.jpg"/></a></figure><figure id="7d9a58dd-72f8-4141-9986-5b144b8c80c2" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228190948_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228190948_1.jpg"/></a></figure><figure id="3f504349-a54d-4169-a6e9-1566f4c160d0" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228191015_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228191015_1.jpg"/></a></figure><hr id="27784e1e-9e41-4e87-b94c-13870a2cf16b"/><h3 id="f8353728-5a04-4938-b952-3f58cce0c92b" class="">．棺材反清火(位置/效果/跳丟)</h3><figure id="5a3ac756-aa09-4fba-a8ad-4ea7ef736408" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228190437_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228190437_1.jpg"/></a></figure><figure id="62011d3a-04e1-47b8-b725-8d4ea30f6e80" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228190440_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228190440_1.jpg"/></a></figure><figure id="8c17536d-b35d-41f2-a4e6-279aae23ed5f" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228190447_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228190447_1.jpg"/></a></figure><hr id="45520793-d165-4a46-96c4-b161b732b268"/><h3 id="47bdac0e-a7c7-4c84-aef2-5d0214b49a3c" class="">．側道匪2樓火(位置/效果/跑跳丟)</h3><p id="11ee5a6a-9d70-4f83-90df-ad3016bc98b8" class="">備註：一直瞄著第一張的瞄點過橋後丟</p><figure id="95b36e49-4068-45b9-a17a-6158dac45190" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228191032_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228191032_1.jpg"/></a></figure><figure id="35328165-1c55-4875-8424-9d1509dca9e5" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228191042_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228191042_1.jpg"/></a></figure><hr id="cfcb041b-3010-4749-aeb8-46935351cbfb"/><h3 id="03e5226c-21aa-4413-95e1-62fc7cc39cf1" class="">．B點棺材包火(位置/效果/跳丟)</h3><figure id="853a367e-88b0-429a-901d-dd8080d20f36" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228190458_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228190458_1.jpg"/></a></figure><figure id="40cbf402-6426-48fd-9ef5-bfe7f2220ed9" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228190503_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228190503_1.jpg"/></a></figure><figure id="793aa6a6-f84b-4b40-a9f8-c6bea181f9ff" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228190508_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228190508_1.jpg"/></a></figure><hr id="903d1cec-83f0-4f53-b766-f4a392b97580"/><h3 id="489435ad-e8b0-42e7-a458-ae9464654292" class="">．台下/BBQ火(位置/效果/跳丟)</h3><figure id="96d69ed7-dfce-40ba-b422-c6fe0bba9095" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228190901_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228190901_1.jpg"/></a></figure><figure id="079f9335-d13b-4d76-a781-6597a1a43d99" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228190905_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228190905_1.jpg"/></a></figure><figure id="0f156a70-52ce-47e7-8f00-b41b3745d399" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228190910_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220228190910_1.jpg"/></a></figure><hr id="4e75d3db-07cb-4bcc-b9a4-ed05f8ede5e2"/><h1 id="8867d63f-a04a-42db-bc59-9068001ca9e5" class=""><mark class="highlight-teal">《CS:GO-EST隊伍Dust2道具學習-閃光》</mark></h1><h3 id="1ffd2379-e2bf-4ad8-992e-236a58c60f2a" class="">．下水道中路瞬閃(位置/效果/跳丟)</h3><figure id="b800c6ed-ec26-4d19-a2ab-fba0e8237b35" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213195349_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213195349_1.jpg"/></a></figure><figure id="35d65bc8-0d79-4708-9fbd-7e017ffc0c54" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213195357_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213195357_1.jpg"/></a></figure><hr id="fc6aec9b-48cc-45f8-a94d-c2fe42cf7ec3"/><h3 id="5e948df9-8710-46f2-a0d8-a5a7c03553e8" class="">．中路瞬閃(位置/效果/直接丟)</h3><figure id="9d1dc2ea-0ee6-4f23-b8b7-94d931694bac" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213195418_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213195418_1.jpg"/></a></figure><figure id="795cfd5d-5b44-4373-a4a7-d25f3c4a007e" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213195422_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213195422_1.jpg"/></a></figure><figure id="e001c654-efca-4f47-bf87-0d3ede56d684" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213195427_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213195427_1.jpg"/></a></figure><hr id="4230e2c7-39cd-4c0d-b010-1ad1f98ab948"/><h3 id="6961f574-9435-4028-904b-b312ad07fd2b" class="">．B包點無敵閃(位置/效果/跳丟)</h3><figure id="c643422c-a31e-4c73-90d2-917a9871a73e" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193046_1%202.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213193046_1%202.jpg"/></a></figure><figure id="f577ffb6-f09b-412c-b9dd-9e67b106f659" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213195447_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213195447_1.jpg"/></a></figure><figure id="c1960a1f-ed4d-4e37-90c7-d812925345cb" class="image"><a href="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213195452_1.jpg"><img style="width:1024px" src="EternityStory%EF%BD%9C%20CS%20GO-Inferno%E9%81%93%E5%85%B7%E5%AD%B8%E7%BF%92%209b06426838d642b7814bc2520ef6fb9c/20220213195452_1.jpg"/></a></figure><hr id="6627e71d-0255-41e0-8c7d-214774a862be"/></div></article></body></html>
